@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pemutar Musik & Radio Elegan</title>
+    <title>Music Player Tius</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -23,7 +23,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Font Inter untuk tampilan modern */
             background-color: var(--bg-dark);
             display: flex;
             justify-content: center;
@@ -40,9 +40,9 @@
             background-color: var(--card-dark);
             padding: 35px;
             border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-deep);
+            box-shadow: var(--shadow-deep); /* Bayangan lebih dalam untuk efek "mengambang" */
             width: 100%;
-            max-width: 680px;
+            max-width: 680px; /* Lebar optimal untuk desain Spotify */
             text-align: center;
             position: relative;
             z-index: 2;
@@ -59,10 +59,10 @@
         }
 
         .player-header h1 {
-            color: var(--text-light);
+            color: var(--text-light); /* Judul utama tetap terang */
             font-size: 2.6em;
             font-weight: 700;
-            letter-spacing: -0.05em;
+            letter-spacing: -0.05em; /* Lebih rapat */
             text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
             margin: 0; /* Hapus margin default h1 */
         }
@@ -140,19 +140,20 @@
             min-height: 28px;
             font-weight: 400;
             line-height: 1.4;
-            text-overflow: ellipsis;
+            text-overflow: ellipsis; /* Pastikan teks panjang terpotong rapi */
             white-space: nowrap;
             overflow: hidden;
         }
 
+        /* Tombol multi-fungsi untuk pemilihan lagu */
         .multifunction-select-container {
             position: relative;
             margin-bottom: 20px;
         }
 
         .select-song-button {
-            background-color: var(--accent-green);
-            color: var(--bg-dark);
+            background-color: var(--accent-green); /* Hijau Spotify */
+            color: var(--bg-dark); /* Teks gelap di tombol hijau */
             padding: 15px 30px;
             border: none;
             border-radius: var(--border-radius-md);
@@ -169,17 +170,17 @@
         }
 
         .select-song-button:hover {
-            background-color: #1ed760;
+            background-color: #1ed760; /* Hijau sedikit lebih terang */
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
         }
 
         .select-options-popup {
             position: absolute;
-            top: calc(100% + 10px);
+            top: calc(100% + 10px); /* Sedikit di bawah tombol */
             left: 50%;
             transform: translateX(-50%);
-            background-color: var(--control-bg);
+            background-color: var(--control-bg); /* Warna gelap untuk popup */
             border-radius: var(--border-radius-md);
             box-shadow: var(--shadow-subtle);
             padding: 15px;
@@ -188,11 +189,11 @@
             gap: 10px;
             z-index: 10;
             min-width: 250px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05); /* Sedikit border */
         }
 
         .select-options-popup button {
-            background-color: #333;
+            background-color: #333; /* Tombol di popup sedikit lebih terang */
             color: var(--text-light);
             padding: 10px 15px;
             border: none;
@@ -212,7 +213,7 @@
         }
 
         .radio-select {
-            background-color: var(--control-bg);
+            background-color: var(--control-bg); /* Warna gelap untuk dropdown radio */
             color: var(--text-light);
             padding: 12px 25px;
             border: none;
@@ -229,6 +230,7 @@
             appearance: none;
             text-align: center;
             padding-right: 40px;
+            /* Ikon panah dropdown putih */
             background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
             background-repeat: no-repeat;
             background-position: right 15px center;
@@ -253,8 +255,9 @@
             border-radius: var(--border-radius-md);
             box-shadow: var(--shadow-subtle);
             outline: none;
-            background-color: var(--control-bg);
-            filter: invert(0);
+            background-color: var(--control-bg); /* Sesuaikan dengan warna kontrol */
+            filter: invert(0); /* Pastikan kontrol audio default tetap terlihat baik di latar belakang gelap */
+            /* Anda mungkin perlu menata gaya kontrol audio kustom untuk tampilan yang seragam di semua browser */
         }
 
         .equalizer {
@@ -264,7 +267,7 @@
             gap: 4px;
             height: 70px;
             margin-bottom: 25px;
-            background-color: rgba(255, 255, 255, 0.05);
+            background-color: rgba(255, 255, 255, 0.05); /* Sedikit transparan untuk equalizer */
             padding: 10px;
             border-radius: var(--border-radius-md);
             box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -274,7 +277,7 @@
 
         .eq-bar {
             width: 8px;
-            background-color: var(--equalizer-bar-color);
+            background-color: var(--equalizer-bar-color); /* Menggunakan warna aksen */
             height: 5px;
             border-radius: 2px;
             transition: height 0.1s ease-out;
@@ -286,19 +289,19 @@
             margin-top: 20px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 20px; /* Jarak antar tombol kontrol lebih besar */
             flex-wrap: wrap;
         }
 
         .control-button {
-            background-color: var(--control-bg);
+            background-color: var(--control-bg); /* Latar belakang tombol kontrol gelap */
             color: var(--text-light);
             padding: 12px 22px;
             border: none;
-            border-radius: 50%;
+            border-radius: 50%; /* Tombol bulat */
             cursor: pointer;
-            font-size: 1.4em;
-            width: 50px;
+            font-size: 1.4em; /* Ukuran ikon lebih besar */
+            width: 50px; /* Ukuran bulat */
             height: 50px;
             display: flex;
             justify-content: center;
@@ -307,10 +310,11 @@
             box-shadow: var(--shadow-subtle);
         }
 
+        /* Tombol Play/Pause agar menonjol */
         #playPauseButton {
             background-color: var(--accent-green);
             color: var(--bg-dark);
-            width: 60px;
+            width: 60px; /* Lebih besar */
             height: 60px;
             font-size: 1.8em;
             box-shadow: 0 6px 20px rgba(29, 185, 84, 0.4);
@@ -318,7 +322,7 @@
 
         .control-button:hover {
             background-color: #383838;
-            transform: scale(1.05);
+            transform: scale(1.05); /* Sedikit membesar */
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
         }
         #playPauseButton:hover {
@@ -335,16 +339,17 @@
             box-shadow: none;
         }
 
+        /* Tombol Repeat */
         #repeatButton {
             background-color: var(--control-bg);
-            color: var(--text-medium);
+            color: var(--text-medium); /* Warna sedikit redup saat nonaktif */
         }
         #repeatButton.active {
-            color: var(--accent-green);
+            color: var(--accent-green); /* Warna aksen saat aktif */
         }
         #repeatButton:hover {
             background-color: #383838;
-            color: var(--text-light);
+            color: var(--text-light); /* Menjadi terang saat hover */
         }
 
 
@@ -360,7 +365,7 @@
             color: var(--text-light);
             font-size: 1.8em;
             margin-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1); /* Garis pemisah halus */
             padding-bottom: 10px;
             font-weight: 600;
         }
@@ -368,11 +373,11 @@
         #playlist {
             list-style: none;
             padding: 0;
-            max-height: 250px;
+            max-height: 250px; /* Tinggi playlist sedikit lebih besar */
             overflow-y: auto;
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: var(--border-radius-md);
-            background-color: rgba(255, 255, 255, 0.03);
+            background-color: rgba(255, 255, 255, 0.03); /* Latar belakang playlist sangat gelap dan transparan */
             box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
             flex-grow: 1;
         }
@@ -386,7 +391,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            color: var(--text-medium);
+            color: var(--text-medium); /* Warna teks lagu normal */
         }
 
         #playlist li:last-child {
@@ -394,13 +399,13 @@
         }
 
         #playlist li:hover {
-            background-color: rgba(29, 185, 84, 0.1);
+            background-color: rgba(29, 185, 84, 0.1); /* Hover dengan sentuhan hijau */
             color: var(--text-light);
         }
 
         #playlist li.active {
-            background-color: rgba(29, 185, 84, 0.2);
-            color: var(--accent-green);
+            background-color: rgba(29, 185, 84, 0.2); /* Latar belakang hijau transparan saat aktif */
+            color: var(--accent-green); /* Teks hijau terang saat aktif */
             font-weight: 600;
             box-shadow: inset 0 0 10px rgba(29, 185, 84, 0.3);
         }
@@ -532,10 +537,8 @@
             <option value="https://cast1.my-control-panel.com/proxy/radioso1/stream">Sonora Bandung FM</option>
             <option value="https://stream-ssl.arenastreaming.com:8000/jakarta">Sonora FM</option>
             <option value="https://stream-ssl.arenastreaming.com:8005/bandung">Elshinta FM</option>
-            <option value="https://n0a.radiojar.com/7csmg90fuqruv?1749393922=&rj-tok=AAABl1AKeMgAmgFKesYp8bzufg&rj-ttl=5">Rock FM</option>                                  
-            <option value="https://stream-ssl.arenastreaming.com:8000/jakarta">Jakarta Stream</option>
-            <option value="https://n0c.radiojar.com/4ywdgup3bnzuv?rj-ttl=5&rj-tok=AAABl0m3_wEAQKW_aRVDN7HB3Q">iradio Stream</option>
-            <option value="https://cast3.asurahosting.com/proxy/radios25/stream">Radio S25</option>
+            <option value="https://n0a.radiojar.com/7csmg90fuqruv">Rock FM</option> <option value="https://stream-ssl.arenastreaming.com:8000/jakarta">Jakarta Stream</option>
+            <option value="https://n0c.radiojar.com/4ywdgup3bnzuv">iradio Stream</option> <option value="https://cast3.asurahosting.com/proxy/radios25/stream">Radio S25</option>
             <option value="https://s1.cloudmu.id/listen/female_radio/radio.mp3">Female Radio</option>
         </select>
 
@@ -626,9 +629,9 @@
         });
 
         randomImageBtn.addEventListener('click', async () => {
-            // Contoh API gambar acak (Unsplash Source)
-            // Ganti dengan API yang Anda inginkan, pastikan mendukung CORS
-            const randomImageUrl = `https://picsum.photos/400/400?random=${Math.random()}`; // Menggunakan picsum.photos untuk gambar acak
+            // Menggunakan picsum.photos untuk gambar acak
+            // Gunakan ukuran yang masuk akal, misal 400x400
+            const randomImageUrl = `https://picsum.photos/400/400?random=${Math.random()}`; 
             displayImage(randomImageUrl);
         });
 
@@ -646,6 +649,8 @@
         }
         createEqualizerBars();
 
+        // Inisialisasi AudioContext hanya saat ada interaksi pengguna
+        // Ini penting untuk mengatasi kebijakan autoplay browser
         function initializeAudioContextAndAnalyser() {
             if (!audioContext || audioContext.state === 'closed') {
                 audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -655,23 +660,32 @@
             if (!analyser || audioContext.state === 'closed' || audioContext.state === 'suspended') {
                  if (analyser) { // Pastikan analyser ada sebelum disconnect
                     try {
-                        analyser.disconnect(); // Disconnect dari node sebelumnya
+                        // Coba disconnect dari node sebelumnya jika ada, untuk menghindari error jika sudah terhubung
+                        analyser.disconnect(); 
                     } catch (e) {
                         console.warn("Analyser was not connected, ignoring disconnect error:", e);
                     }
                 }
 
-                const source = audioContext.createMediaElementSource(audioPlayer);
-                analyser = audioContext.createAnalyser();
-                analyser.fftSize = 256;
-                bufferLength = analyser.frequencyBinCount;
-                dataArray = new Uint8Array(bufferLength);
+                // Cek apakah audioPlayer sudah memiliki sumber dan ready
+                // Jika tidak, jangan mencoba membuat MediaElementSource
+                if (audioPlayer.src) {
+                    const source = audioContext.createMediaElementSource(audioPlayer);
+                    analyser = audioContext.createAnalyser();
+                    analyser.fftSize = 256;
+                    bufferLength = analyser.frequencyBinCount;
+                    dataArray = new Uint8Array(bufferLength);
 
-                source.connect(analyser);
-                analyser.connect(audioContext.destination);
-                console.log('Analyser and connections established.');
+                    source.connect(analyser);
+                    analyser.connect(audioContext.destination);
+                    console.log('Analyser and connections established.');
+                } else {
+                    console.warn('audioPlayer.src kosong, tidak dapat membuat MediaElementSource untuk Analyser.');
+                    analyser = null; // Pastikan analyser null jika tidak bisa dibuat
+                }
             }
 
+            // Penting: Resum AudioContext jika dalam keadaan suspended
             if (audioContext.state === 'suspended') {
                 audioContext.resume().then(() => {
                     console.log('AudioContext resumed successfully');
@@ -681,6 +695,7 @@
 
         // Fungsi untuk memperbarui equalizer dengan ketinggian acak yang lebih dinamis
         function updateEqualizer() {
+            // Equalizer berhenti bergerak jika audio dijeda dan di awal
             if (audioPlayer.paused && audioPlayer.currentTime === 0 && !isRadioPlaying) {
                 const bars = equalizerElement.children;
                 for (let i = 0; i < bars.length; i++) {
@@ -694,12 +709,12 @@
                 analyser.getByteFrequencyData(dataArray);
 
                 const bars = equalizerElement.children;
+                // Mengambil sampel dataArray secara lebih merata untuk setiap bar
                 const step = Math.floor(bufferLength / bars.length);
 
                 for (let i = 0; i < bars.length; i++) {
                     const value = dataArray[Math.min(i * step, bufferLength - 1)];
-                    // Ketinggian bar yang lebih bervariasi
-                    // Menggunakan Math.random() untuk sedikit variasi tambahan pada setiap bar
+                    // Ketinggian bar yang lebih bervariasi dengan faktor acak
                     const randomFactor = 0.7 + (Math.random() * 0.6); // Antara 0.7 dan 1.3
                     const height = 5 + (value / 255) * 65 * randomFactor;
                     bars[i].style.height = `${Math.max(5, height)}px`; // Pastikan tidak kurang dari 5px
@@ -714,6 +729,7 @@
             audioPlayer.currentTime = 0;
             audioPlayer.src = '';
             
+            // Ganti ikon play menjadi pause saat mulai memuat
             playPauseButton.innerHTML = '<i class="fas fa-pause"></i>'; 
 
             if (sourceObj.type === 'file') {
@@ -743,7 +759,9 @@
                 isRepeating = false;
                 repeatButton.classList.remove('active');
                 audioPlayer.loop = false;
-                audioPlayer.src = sourceObj.url;
+                // Sangat penting: Pastikan URL radio menggunakan HTTPS di sini
+                // Jika tidak, browser akan memblokir Mixed Content di GitHub Pages
+                audioPlayer.src = sourceObj.url; 
                 currentSongInfo.textContent = `Sedang mendengarkan: ${sourceObj.name}`;
 
                 prevButton.disabled = true;
@@ -757,16 +775,20 @@
             }
 
             audioPlayer.load();
+            // Coba play setelah AudioContext diinisialisasi/dilanjutkan
             audioPlayer.play().then(() => {
                 playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
-                initializeAudioContextAndAnalyser();
+                // Inisialisasi Analyser setelah audio mulai diputar untuk kompatibilitas browser
+                initializeAudioContextAndAnalyser(); 
                 updateEqualizer();
             }).catch(e => {
                 console.error('Error playing audio:', e);
-                alert(`Gagal memutar ${sourceObj.name}. Pastikan URL valid atau file tidak korup.`);
+                // Tambahkan alert yang lebih informatif jika gagal play
+                alert(`Gagal memutar ${sourceObj.name}.\n\nKemungkinan penyebab:\n1. Browser memblokir pemutaran otomatis (coba klik tombol play).\n2. Konten campuran (Mixed Content) jika URL radio adalah HTTP dan halaman Anda HTTPS.\n3. URL radio tidak valid atau sedang offline.`);
                 playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
                 currentSongInfo.textContent = `Gagal memutar: ${sourceObj.name}`;
                 audioPlayer.src = '';
+                // Set equalizer kembali ke dasar jika play gagal
                 const bars = equalizerElement.children;
                 for (let i = 0; i < bars.length; i++) {
                     bars[i].style.height = '5px';
@@ -774,6 +796,7 @@
             });
         }
 
+        // Fungsi untuk menambahkan file ke playlist
         function addFilesToPlaylist(files) {
             playlist = [];
             isRadioPlaying = false;
@@ -810,27 +833,32 @@
             }
         }
 
+        // Event listener untuk tombol Pilih Lagu (menampilkan popup)
         selectSongButton.addEventListener('click', (event) => {
-            event.stopPropagation();
+            event.stopPropagation(); // Mencegah event click menyebar ke document
             selectOptionsPopup.style.display = selectOptionsPopup.style.display === 'flex' ? 'none' : 'flex';
         });
 
+        // Menyembunyikan popup jika klik di luar
         document.addEventListener('click', (event) => {
             if (!selectSongButton.contains(event.target) && !selectOptionsPopup.contains(event.target)) {
                 selectOptionsPopup.style.display = 'none';
             }
         });
 
+        // Event listener untuk tombol Pilih Banyak Lagu di popup
         selectMultipleFilesBtn.addEventListener('click', () => {
             fileInputMultiple.click();
             selectOptionsPopup.style.display = 'none';
         });
 
+        // Event listener untuk tombol Pilih Folder Lagu di popup
         selectFolderBtn.addEventListener('click', () => {
             fileInputFolder.click();
             selectOptionsPopup.style.display = 'none';
         });
 
+        // Event listener untuk input file multiple (Pilih Banyak Lagu)
         fileInputMultiple.addEventListener('change', (event) => {
             const files = event.target.files;
             if (files.length > 0) {
@@ -838,6 +866,7 @@
             }
         });
 
+        // Event listener untuk input file folder (Pilih Folder Lagu)
         fileInputFolder.addEventListener('change', (event) => {
             const files = event.target.files;
             if (files.length > 0) {
@@ -845,6 +874,7 @@
             }
         });
 
+        // Event listener untuk memilih radio
         radioSelect.addEventListener('change', (event) => {
             const selectedUrl = event.target.value;
             const selectedName = event.target.options[event.target.selectedIndex].text;
@@ -858,6 +888,7 @@
                 audioPlayer.pause();
                 audioPlayer.src = '';
                 playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
+                // Set equalizer kembali ke dasar jika tidak ada radio
                 const bars = equalizerElement.children;
                 for (let i = 0; i < bars.length; i++) {
                     bars[i].style.height = '5px';
@@ -865,13 +896,15 @@
             }
         });
 
+        // Event listener untuk tombol Play/Pause
         playPauseButton.addEventListener('click', () => {
+            // Penting: Inisialisasi/lanjutkan AudioContext pada interaksi pengguna pertama
+            initializeAudioContextAndAnalyser(); 
             if (audioPlayer.paused) {
                 if (audioPlayer.src) {
                     audioPlayer.play().then(() => {
                         playPauseButton.innerHTML = '<i class="fas fa-pause"></i>';
-                        initializeAudioContextAndAnalyser();
-                        updateEqualizer();
+                        updateEqualizer(); // Panggil updateEqualizer setelah play
                     }).catch(e => {
                         console.error('Error playing audio:', e);
                         alert('Gagal memutar audio. Pastikan ada lagu/radio yang dipilih dan browser mengizinkan pemutaran.');
@@ -885,6 +918,7 @@
             }
         });
 
+        // Event listener untuk tombol Sebelumnya
         prevButton.addEventListener('click', () => {
             if (!isRadioPlaying && currentTrackIndex > 0) {
                 currentTrackIndex--;
@@ -892,6 +926,7 @@
             }
         });
 
+        // Event listener untuk tombol Berikutnya
         nextButton.addEventListener('click', () => {
             if (!isRadioPlaying && currentTrackIndex < playlist.length - 1) {
                 currentTrackIndex++;
@@ -899,6 +934,7 @@
             }
         });
 
+        // Event listener untuk tombol Repeat
         repeatButton.addEventListener('click', () => {
             if (!isRadioPlaying) {
                 isRepeating = !isRepeating;
@@ -908,9 +944,11 @@
             }
         });
 
+        // Event listener saat lagu selesai (hanya berlaku untuk file, bukan radio)
         audioPlayer.addEventListener('ended', () => {
             if (isRadioPlaying) {
                 console.log("Radio stream ended. Attempting to restart...");
+                // Coba muat ulang dan putar radio jika stream berakhir
                 audioPlayer.load();
                 audioPlayer.play();
                 return;
@@ -925,6 +963,7 @@
                 playPauseButton.innerHTML = '<i class="fas fa-play"></i>';
                 currentSongInfo.textContent = 'Daftar putar selesai.';
                 audioPlayer.currentTime = 0;
+                // Set equalizer kembali ke dasar jika playlist selesai
                 const bars = equalizerElement.children;
                 for (let i = 0; i < bars.length; i++) {
                     bars[i].style.height = '5px';
@@ -932,6 +971,7 @@
             }
         });
 
+        // Inisialisasi awal saat DOM siap
         document.addEventListener('DOMContentLoaded', () => {
              createEqualizerBars();
              prevButton.disabled = true;
